@@ -159,7 +159,6 @@ width: 100%;
             left: 70%;
             transform: translate(-50%, -50%);
             width: 400px;
-            padding: 0;
             background-color: white;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1000;
@@ -167,7 +166,7 @@ width: 100%;
 
             .title-bg {
                 background-color: var(--color-primary);
-                border: 1px solid --color-primary;
+                border: 1px solid var(--color-primary);
                 padding:20px 35px;
 
                 h4 {    
@@ -191,16 +190,36 @@ width: 100%;
                     margin-top: 20px;
                     margin-bottom: 15px;
                 }
-
-                input {
+                .form-input-group {
+                    display: flex;
+                    flex-direction: column;
+                    padding-right: 10px;
                     width: 90%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    border: 2px solid #ccc;
-                    border-radius: 4px;
-                    background-color: #f9f9f9;
-                    font-size: 16px;
+                    input {
+                        
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        border: 2px solid #ccc;
+                        border-radius: 4px;
+                        background-color: #f9f9f9;
+                        font-size: 16px;
+
+                        &.is-invalid {
+                            border-color: red;
+                        }
+                    }
+    
+                    .form-error {
+                        color: red;
+                        display: none;
+                        font-size: 15px;
+                    }
+
+                    input.is-invalid + .form-error {
+                        display: block;
+                    }
                 }
+                
 
                 select {
                     width: 90%;
@@ -211,6 +230,8 @@ width: 100%;
                     background-color: #f9f9f9;
                     font-size: 16px;
                 }
+
+                
 
                 .form-btn {
                     text-decoration: none;

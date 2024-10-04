@@ -68,22 +68,39 @@
             </div>
 
             <div class="about-form">
+
                 <div class="title-bg">
                     <h4>Request a call back</h4>
                 </div>
-                <form  action="/submit" method="post">
+
+                <form  onsubmit="handleFormSubmit(event)" novalidate>
                     
                     <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
-                    <input placeholder="Name" type="text" id="name" name="name" required>
-                    <input placeholder="Email address" type="email" id="email" name="email" required>
-                    <input placeholder="Phone" type="tel" id="phone" name="phone" pattern="[0-9] {10}">
+
+                    <div class="form-input-group">
+                        <input placeholder="Name" type="text" id="name" name="name" required>
+                        <span class="form-error">You must enter your name</span>
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <input placeholder="Email address" type="email" id="email" name="email" required>
+                        <span class="form-error">You must enter your e-mail address</span>
+                    </div>
+                    
+                    <div class="form-input-group">
+                        <input placeholder="Phone" type="tel" id="phone" name="phone" pattern="[0-9] {10}">
+                        <span class="form-error">You must enter your phonenumber</span>
+                    </div>
+                    
+
                     <select name="dropdown" id="dropdown">
                         <option value="option1">Financial consulting</option>
                         <option value="option2">Option2</option>
                         <option value="option3">option3</option>
                     </select>
-                    <a class="form-btn" href="#">Submit</a>
+                    <button class="form-btn" type="submit">Submit</button>
                 </form>
+
             </div>
         </div>
     </section>
